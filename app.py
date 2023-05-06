@@ -1,7 +1,4 @@
 import streamlit as st
+from utilities import *
 
 st.title('Saudi REITs')
-
-pdata = pd.read_csv('data/pdata.csv')
-
-st.write(pdata)
