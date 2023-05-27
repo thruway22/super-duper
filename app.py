@@ -1,8 +1,8 @@
 import streamlit as st
-from utilities import *
+import utilities as utl
+
+
 
 st.title('Saudi REITs')
-
-st.write('test3')
-
-st.write('test2')
+ticker = st.selectbox('Choose fund', utl.tickers.keys(),
+                      label_visibility='collapsed', format_func=lambda x:tickers[x])
