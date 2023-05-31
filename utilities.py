@@ -26,3 +26,10 @@ tickers = {
     4347: '4347: Bonyan REIT',
     4348: '4348: Alkhabeer REIT'
 }
+
+def get_pdata():
+    return pd.read_csv('data/pdata.csv')
+# pdata['date'] = pd.to_datetime(pdata['date'], format='%Y-%m-%d')
+
+def get_fdata():
+    return pd.read_csv('data/fdata.csv')
