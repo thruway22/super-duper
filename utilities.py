@@ -27,6 +27,23 @@ tickers = {
     4348: '4348: Alkhabeer REIT'
 }
 
+# global data columns
+ticker_col = 'ticker'
+year_col = 'year'
+name_col='name'
+shares_col='shares'
+ffo_col='ffo'
+dividend_col='dividend'
+revenue_col='revenue'
+interest_col='interest'
+ebitda_col='ebitda'
+ebit_col='ebit'
+nav_col = 'nav'
+asset_col='asset'
+equity_col='equity'
+casti_col='casti'
+debt_col='debt'
+
 def get_pdata():
     pdata = pd.read_csv('data/pdata.csv')
     pdata['date'] = pd.to_datetime(pdata['date'], format='%Y-%m-%d')
