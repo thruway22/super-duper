@@ -8,5 +8,5 @@ ticker = st.selectbox('Choose fund', utl.tickers.keys(),
 pdata = utl.get_pdata()
 fdata = utl.get_fdata()
 
-st.table(pdata)
-st.table(fdata)
+st.table(pdata.head())
+st.table(fdata.head())
