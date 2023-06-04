@@ -46,14 +46,16 @@ debt_col='debt'
 
 def get_pdata():
     pdata = pd.read_csv('data/pdata.csv')
-    pdata['date'] = pd.to_datetime(pdata['date'], format='%Y-%m-%d').dt.floor('d').dt.tz_localize(None)
+    pdata['date'] = pd.to_datetime(pdata['date'], format='%Y-%m-%d')
     return pdata
 # pdata['date'] = pd.to_datetime(pdata['date'], format='%Y-%m-%d')
 
 def get_fdata():
     fdata = pd.read_csv('data/fdata.csv')
-    fdata[year_col] = pd.to_datetime(fdata[year_col], format='%Y-%m-%d').dt.floor('d').dt.tz_localize(None)
+    fdata[year_col] = pd.to_datetime(fdata[year_col], format='%Y-%m-%d')
     fdata = fdata.sort_values(by=year_col)
     return fdata
+
+
 
 
