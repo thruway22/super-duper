@@ -5,8 +5,5 @@ st.title('Saudi REITs')
 ticker = st.selectbox('Choose fund', utl.tickers.keys(),
                       label_visibility='collapsed', format_func=lambda x:utl.tickers[x])
 
-pdata = utl.get_pdata()
-fdata = utl.get_fdata()
-
-st.table(pdata.head(10))
-st.table(fdata.head(10))
+st.table(get_ticker_timeseries(ticker))
+st.table(get_ticker_categorical(ticker, 'full-year'))
