@@ -9,6 +9,7 @@ ticker = st.selectbox('Choose fund', utl.tickers.keys(),
 if ticker != 9999:
     ts = utl.get_ticker_timeseries(ticker).head()
     ct = utl.get_ticker_categorical(ticker, 'full-year')
+    st.table(ts)
 
     fig = px.line(ts, x=ts.index, y=['price', 'nav'])
     st.plotly_chart(fig)
