@@ -10,5 +10,5 @@ if ticker != 9999:
     ts = utl.get_ticker_timeseries(ticker).head()
     ct = utl.get_ticker_categorical(ticker, 'full-year')
 
-    fig = px.line(ts, x=df.index, y=['price', 'nav'])
+    fig = px.line(ts, x=ts.index, y=['price', 'nav'])
     st.plotly_chart(fig)
