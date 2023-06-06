@@ -12,4 +12,4 @@ if ticker != 9999:
     st.table(ts.head())
 
     fig = px.line(ts, x=ts.index, y=['price', 'nav'])
-    st.plotly_chart(fig)
+    st.plotly_chart(fig, theme=None)
