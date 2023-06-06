@@ -5,6 +5,7 @@ from datetime import timedelta
 from pandas.tseries.offsets import DateOffset
 from pandas.tseries.offsets import MonthEnd
 import streamlit as st
+import plotly.express as px
 
 tickers = {    
     9999: '',
