@@ -16,3 +16,6 @@ if ticker != 9999:
 
     fig = px.line(ts, x=ts.index, y=['price', 'nav'])
     st.plotly_chart(fig, use_container_width=True, config= {'displayModeBar': False})
+
+    fig = px.line(ct, x=ct.index, y='ffo_payout')
+    st.plotly_chart(fig, use_container_width=True, config= {'displayModeBar': False})
