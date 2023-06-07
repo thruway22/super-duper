@@ -27,7 +27,7 @@ if ticker != 9999:
                                         hovertemplate = t.hovertemplate.replace(t.name, newnames[t.name])
                                         )
                     )
-    st.plotly_chart(fig, use_container_width=True, config= {'displayModeBar': False})
+    st.plotly_chart(fig, theme=None, use_container_width=True, config= {'displayModeBar': False})
 
     fig = px.bar(ct, x=ct.index, y='ffo_payout')
     st.plotly_chart(fig, use_container_width=True, config= {'displayModeBar': False})
