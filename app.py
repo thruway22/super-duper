@@ -14,6 +14,7 @@ if ticker != 9999:
     ct = utl.get_ticker_categorical(ticker, 'full-year')
     st.table(ts.head())
 
+    st.header('Price/NAV')
     fig = px.line(ts, x=ts.index, y=['price', 'nav'])
     fig.update_layout(
         xaxis_title = 'Date',
