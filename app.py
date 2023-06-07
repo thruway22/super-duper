@@ -16,8 +16,9 @@ if ticker != 9999:
 
     fig = px.line(ts, x=ts.index, y=['price', 'nav'], labels={"price": "Price", "nav": "NAV"})
     fig.update_layout(
-        xaxis_title= 'Date',
-        yaxis_title= 'Price (SAR)')
+        xaxis_title = 'Date',
+        yaxis_title = 'Price (SAR)',
+        legend_title = 'Variable')
     # fig.update_yaxes(minor=dict(tickmode='auto', showgrid=True))
     # griddash='dash', minor_griddash="dot"
     st.plotly_chart(fig, use_container_width=True, config= {'displayModeBar': False})
