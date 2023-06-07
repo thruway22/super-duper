@@ -2,6 +2,9 @@ import streamlit as st
 import utilities as utl
 import plotly.express as px
 
+with open('style.css') as f:
+    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
 st.title('Saudi REITs')
 ticker = st.selectbox('Choose fund', utl.tickers.keys(),
                       label_visibility='collapsed', format_func=lambda x:utl.tickers[x])
