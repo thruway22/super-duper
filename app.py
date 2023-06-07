@@ -14,11 +14,11 @@ if ticker != 9999:
     ct = utl.get_ticker_categorical(ticker, 'full-year')
     st.table(ts.head())
 
-    fig = px.line(ts, x=ts.index, y=['price', 'nav'])
+    fig = px.line(ts, x=ts.index, y=['price', 'nav'], labels={"price": "Price (SAR)", "nav": "NAV"})
     fig.update_layout(
         xaxis_title= 'Date',
         yaxis_title= 'Price (SAR)')
-    fig.update_yaxes(minor=dict(tickmode='auto', showgrid=True))
+    # fig.update_yaxes(minor=dict(tickmode='auto', showgrid=True))
     # griddash='dash', minor_griddash="dot"
     st.plotly_chart(fig, use_container_width=True, config= {'displayModeBar': False})
 
