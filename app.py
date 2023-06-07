@@ -18,7 +18,7 @@ if ticker != 9999:
     fig.update_layout(
         xaxis_title= 'Date',
         yaxis_title= 'Price (SAR)')
-    fig.update_yaxes(minor=dict(ticklen=6, tickcolor="black", tickmode='auto', nticks=10, showgrid=True))
+    fig.update_yaxes(minor=dict(tickmode='auto', showgrid=True))
     # griddash='dash', minor_griddash="dot"
     st.plotly_chart(fig, use_container_width=True, config= {'displayModeBar': False})
 
