@@ -21,7 +21,7 @@ if ticker != 9999:
         legend_title = 'Variable')
     # fig.update_yaxes(minor=dict(tickmode='auto', showgrid=True))
     # griddash='dash', minor_griddash="dot"
-    newnames = {'price':'Price', 'nav': 'NAV'}
+    newnames = {'price':'Quote', 'nav': 'NAV'}
     fig.for_each_trace(lambda t: t.update(name = newnames[t.name],
                                         legendgroup = newnames[t.name],
                                         hovertemplate = t.hovertemplate.replace(t.name, newnames[t.name])
