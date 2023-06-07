@@ -14,13 +14,19 @@ if ticker != 9999:
     ct = utl.get_ticker_categorical(ticker, 'full-year')
     st.table(ts.head())
 
-    fig = px.line(ts, x=ts.index, y=['price', 'nav'], labels={"price": "Price", "nav": "NAV"})
+    fig = px.line(ts, x=ts.index, y=['price', 'nav'])
     fig.update_layout(
         xaxis_title = 'Date',
         yaxis_title = 'Price (SAR)',
         legend_title = 'Variable')
     # fig.update_yaxes(minor=dict(tickmode='auto', showgrid=True))
     # griddash='dash', minor_griddash="dot"
+    newnames = {'price':'Price', 'nav': 'NAV'}
+    fig.for_each_trace(lambda t: t.update(name = newnames[t.name],
+                                        legendgroup = newnames[t.name],
+                                        hovertemplate = t.hovertemplate.replace(t.name, newnames[t.name])
+                                        )
+                    )
     st.plotly_chart(fig, use_container_width=True, config= {'displayModeBar': False})
 
     fig = px.bar(ct, x=ct.index, y='ffo_payout')
