@@ -18,7 +18,8 @@ if ticker != 9999:
     fig.update_layout(
         xaxis_title= 'Price (SAR)',
         yaxis_title= 'Date')
-    fig.update_yaxes(griddash='dash', minor_griddash="dot")
+    fig.update_yaxes(showgrid=True)
+    # griddash='dash', minor_griddash="dot"
     st.plotly_chart(fig, use_container_width=True, config= {'displayModeBar': False})
 
     fig = px.bar(ct, x=ct.index, y='ffo_payout')
