@@ -15,6 +15,10 @@ if ticker != 9999:
     st.table(ts.head())
 
     fig = px.line(ts, x=ts.index, y=['price', 'nav'])
+    fig.update_layout(
+        xaxis_title= 'Price (SAR)',
+        yaxis_title= 'Date')
+    fig.update_yaxes(griddash='dash', minor_griddash="dot")
     st.plotly_chart(fig, use_container_width=True, config= {'displayModeBar': False})
 
     fig = px.bar(ct, x=ct.index, y='ffo_payout')
