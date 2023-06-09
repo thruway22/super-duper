@@ -31,5 +31,5 @@ if ticker != 9999:
     st.plotly_chart(fig, use_container_width=True, config= {'displayModeBar': False})
 
     fig = px.bar(ct, x=ct.index, y='ffo_payout')
-    fig.update_yaxes(showgrid=False)
+    fig.update_yaxes(visible=False, showticklabels=False, showgrid=False)
     st.plotly_chart(fig, use_container_width=True, config= {'displayModeBar': False})
