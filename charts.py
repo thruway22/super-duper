@@ -6,7 +6,7 @@ var_dict = {
     'revenue': '%.1fM', 
     'asset': '%.1fM',
     'ffos': '.2f',
-    'ffo_payout': '.1f%',
+    'ffo_payout': '.1%',
     'roic': '%.1f%%',
     'op_margin': '%.1f%%',
     'net_debt_ebitda': '%.2fx',
