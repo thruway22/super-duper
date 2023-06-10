@@ -7,7 +7,7 @@ def display_timeseries_chart(df, metric):
     pass
 
 def display_categorical_chart(df, metric):
-    fig = px.bar(df, x=df.index, y=metric, text=metric, height=280)
+    fig = px.bar(df, x=df.index, y=metric, text_auto=True, height=280)
     fig.update_layout(
         bargap=0.03,
         margin=dict(l=5, r=5, t=0, b=0)
