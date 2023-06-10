@@ -10,7 +10,7 @@ def display_categorical_chart(df, metric):
     fig = px.bar(df, x=df.index, y=metric, text_auto=True, height=280)
     fig.update_layout(
         bargap=0.03,
-        margin=dict(l=5, r=5, t=0, b=0)
+        margin=dict(l=5, r=5, t=5, b=5)
         )
     fig.update_yaxes(visible=False, showticklabels=False, showgrid=False)
     # for i, t in enumerate(texts):
