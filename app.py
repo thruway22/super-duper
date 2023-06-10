@@ -1,5 +1,6 @@
 import streamlit as st
 import utilities as utl
+import charts as cht
 import plotly.express as px
 
 with open('style.css') as f:
@@ -33,7 +34,7 @@ if ticker != 9999:
     right, left = st.columns(2)
     with right:
         st.subheader('FFOS')
-        display_categorical_chart(ct, 'ffos')
+        cht.display_categorical_chart(ct, 'ffos')
     with left:
         st.subheader('FFO Payout')
-        display_categorical_chart(ct, 'ffo_payout')
+        cht.display_categorical_chart(ct, 'ffo_payout')
