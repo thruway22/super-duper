@@ -20,7 +20,7 @@ if ticker != 9999:
         xaxis_title = 'Date',
         yaxis_title = 'Price (SAR)',
         legend_title = 'Variable')
-    fig.update_yaxes(fixedrange=True)#minor=dict(tickmode='auto', showgrid=True))
+    # fig.update_yaxes(fixedrange=True)#minor=dict(tickmode='auto', showgrid=True))
     # griddash='dash', minor_griddash="dot"
     newnames = {'price':'Quote', 'nav': 'NAV'}
     fig.for_each_trace(lambda t: t.update(name = newnames[t.name],
@@ -30,9 +30,10 @@ if ticker != 9999:
                     )
     st.plotly_chart(fig, use_container_width=True, config= {'displayModeBar': False})
 
-    fig = px.bar(ct, x=ct.index, y='ffo_payout')
-    fig.update_yaxes(visible=False, showticklabels=False, showgrid=False)
-    # for i, t in enumerate(texts):
-    #     fig.data[i].text = t
-    #     fig.data[i].textposition = 'outside'
-    st.plotly_chart(fig, use_container_width=True, config= {'displayModeBar': False})
+    right, left = st.columns(2)
+    with right:
+        st.subheader('FFOS')
+        display_categorical_chart(ct, 'ffos')
+    with left:
+        st.subheader('FFO Payout')
+        display_categorical_chart(ct, 'ffo_payout')

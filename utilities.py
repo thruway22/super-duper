@@ -189,11 +189,3 @@ def compute_ticker_categorical_metrics(df):
 def get_ticker_categorical(ticker, fiscal, ttm=False):
     return compute_ticker_categorical_metrics(
         prep_ticker_categorical_data(ticker, fiscal, ttm))
-
-
-
-
-
-
-
-
