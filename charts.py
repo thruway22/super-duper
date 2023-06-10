@@ -8,6 +8,7 @@ def display_timeseries_chart(df, metric):
 
 def display_categorical_chart(df, metric):
     fig = px.bar(df, x=df.index, y=metric)
+    fig.update_layout(bargap=0.30)
     fig.update_yaxes(visible=False, showticklabels=False, showgrid=False)
     # for i, t in enumerate(texts):
     #     fig.data[i].text = t
