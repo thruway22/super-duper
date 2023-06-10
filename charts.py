@@ -2,12 +2,24 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 
+var_dict = {
+        'unit': {
+            'revenue': '%.1fM', 
+            'asset': '%.1fM',
+            'ffos': '.2f',
+            'ffo_payout': '.1f%',
+            'roic': '%.1f%%',
+            'op_margin': '%.1f%%',
+            'net_debt_ebitda': '%.2fx',
+            'coverage': '%.2fx',
+        }
+    }
 
 def display_timeseries_chart(df, metric):
     pass
 
 def display_categorical_chart(df, metric):
-    fig = px.bar(df, x=df.index, y=metric, text_auto='.0%', height=280)
+    fig = px.bar(df, x=df.index, y=metric, text_auto=var_dict[metric], height=280)
     fig.update_layout(
         bargap=0.03,
         margin=dict(l=5, r=5, t=5, b=5)
