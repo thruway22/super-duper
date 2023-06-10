@@ -3,16 +3,14 @@ import plotly.express as px
 import streamlit as st
 
 var_dict = {
-        'unit': {
-            'revenue': '%.1fM', 
-            'asset': '%.1fM',
-            'ffos': '.2f',
-            'ffo_payout': '.1f%',
-            'roic': '%.1f%%',
-            'op_margin': '%.1f%%',
-            'net_debt_ebitda': '%.2fx',
-            'coverage': '%.2fx',
-        }
+    'revenue': '%.1fM', 
+    'asset': '%.1fM',
+    'ffos': '.2f',
+    'ffo_payout': '.1f%',
+    'roic': '%.1f%%',
+    'op_margin': '%.1f%%',
+    'net_debt_ebitda': '%.2fx',
+    'coverage': '%.2fx',
     }
 
 def display_timeseries_chart(df, metric):
