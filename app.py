@@ -12,9 +12,8 @@ ticker = st.selectbox('Choose fund', utl.tickers.keys(),
 
 if ticker != 9999:
     ts = utl.get_ticker_timeseries(ticker)
-    ct_yoy = utl.get_ticker_categorical(ticker, 'full-year')
-    ct_hoh = utl.get_ticker_categorical(ticker, 'half-year')
-    st.table(ct_yoy.head())
+    ct = utl.get_ticker_categorical(ticker)
+    st.table(ct.head())
 
     st.subheader('Price/NAV')
     fig = px.line(ts, x=ts.index, y=['price', 'nav'])
@@ -35,23 +34,23 @@ if ticker != 9999:
     right, left = st.columns(2)
     with right:
         st.subheader('FFOS')
-        cht.display_categorical_chart(ct_yoy, 'ffos')
+        cht.display_categorical_chart(ct, 'ffos')
     with left:
         st.subheader('FFO Payout')
-        cht.display_categorical_chart(ct_yoy, 'ffo_payout')
+        cht.display_categorical_chart(ct, 'ffo_payout')
 
     right, left = st.columns(2)
     with right:
         st.subheader('ffo_margin')
-        cht.display_categorical_chart(ct_yoy, 'ffo_margin')
+        cht.display_categorical_chart(ct, 'ffo_margin')
     with left:
         st.subheader('ffo_roic')
-        cht.display_categorical_chart(ct_yoy, 'ffo_roic')
+        cht.display_categorical_chart(ct, 'ffo_roic')
 
     right, left = st.columns(2)
     with right:
         st.subheader('ffo_coverage')
-        cht.display_categorical_chart(ct_yoy, 'ffo_coverage')
+        cht.display_categorical_chart(ct, 'ffo_coverage')
     with left:
         st.subheader('ffo_leverage')
-        cht.display_categorical_chart(ct_yoy, 'ffo_leverage')
+        cht.display_categorical_chart(ct, 'ffo_leverage')
