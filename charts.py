@@ -37,7 +37,7 @@ def display_categorical_chart(df, metric):
                  padding=6, fmt=var_dict[metric],
                  bbox=dict(boxstyle="round, pad=0.3", fc="#0068c9", lw=0, alpha=0.10))
     
-    ax.get_xaxis().set_visible(False)
+    #ax.get_xaxis().set_visible(False)
     ax.get_yaxis().set_visible(False)    
     
     # hide framebox
