@@ -12,7 +12,8 @@ ticker = st.selectbox('Choose fund', utl.tickers.keys(),
 
 if ticker != 9999:
     ts = utl.get_ticker_timeseries(ticker)
-    ct = utl.get_ticker_categorical(ticker, 'full-year')
+    ct_yoy = utl.get_ticker_categorical(ticker, 'full-year')
+    ct_hoh = utl.get_ticker_categorical(ticker, 'half-year')
     st.table(ts.head())
 
     st.subheader('Price/NAV')
@@ -34,7 +35,15 @@ if ticker != 9999:
     right, left = st.columns(2)
     with right:
         st.subheader('FFOS')
-        cht.display_categorical_chart(ct, 'ffos')
+        yoy, hoh = st.tabs(['Full-Year', 'Half-Year'])
+        with yoy:
+            cht.display_categorical_chart(ct_yoy, 'ffos')
+        with hoh:
+            cht.display_categorical_chart(ct_hoh, 'ffos')
     with left:
         st.subheader('FFO Payout')
-        cht.display_categorical_chart(ct, 'ffo_payout')
+        yoy, hoh = st.tabs(['Full-Year', 'Half-Year'])
+        with yoy:
+            cht.display_categorical_chart(ct_yoy, 'ffo_payout')
+        with hoh:
+            cht.display_categorical_chart(ct_hoh, 'ffo_payout')
