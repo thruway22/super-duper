@@ -57,7 +57,7 @@ def display_categorical_chart2(df, metric):
 
     # show bar values on top
     ax.bar_label(bars, size=10,
-                 padding=6, fmt=var_dict['unit'][metric],
+                 padding=6, fmt=var_dict[metric],
                  bbox=dict(boxstyle="round, pad=0.3", fc="#0068c9", lw=0, alpha=0.10))
     
     ax.get_xaxis().set_visible(False)
