@@ -32,24 +32,24 @@ if ticker != 9999:
 
     right, left = st.columns(2)
     with right:
-        st.subheader('FFOS')
+        st.subheader('FFO/Sahre')
         cht.display_categorical_chart(ct, 'ffos')
     with left:
-        st.subheader('FFO Payout')
+        st.subheader('FFO Payout Ratio')
         cht.display_categorical_chart(ct, 'ffo_payout')
 
     right, left = st.columns(2)
     with right:
-        st.subheader('ffo_margin')
+        st.subheader('FFO Margin')
         cht.display_categorical_chart(ct, 'ffo_margin')
     with left:
-        st.subheader('ffo_roic')
+        st.subheader('FFO ROIC')
         cht.display_categorical_chart(ct, 'ffo_roic')
 
     right, left = st.columns(2)
     with right:
-        st.subheader('ffo_coverage')
+        st.subheader('FFO Coverage')
         cht.display_categorical_chart(ct, 'ffo_coverage')
     with left:
-        st.subheader('ffo_leverage')
+        st.subheader('FFO Leverage')
         cht.display_categorical_chart(ct, 'ffo_leverage') 
