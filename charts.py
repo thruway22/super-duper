@@ -1,20 +1,8 @@
 import numpy as np
 import pandas as pd
-import plotly.express as px
 import streamlit as st
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
-
-var_dict = {
-    'revenue': '%.1fM', 
-    'asset': '%.1fM',
-    'ffos': '.2f',
-    'ffo_payout': '.1%',
-    'ffo_roic': '.1%',
-    'ffo_margin': '.1%',
-    'ffo_leverage': '.2f',
-    'ffo_coverage': '.2f',
-    }
 
 var_dict = {
     'ffos': '%.2f',
@@ -29,18 +17,6 @@ def display_timeseries_chart(df, metric):
     pass
 
 def display_categorical_chart(df, metric):
-    fig = px.bar(df, x=df.index, y=metric, text_auto=var_dict[metric], height=280)
-    fig.update_layout(
-        bargap=0.03,
-        margin=dict(l=5, r=5, t=5, b=5)
-        )
-    fig.update_yaxes(visible=False, showticklabels=False, showgrid=False)
-    # for i, t in enumerate(texts):
-    #     fig.data[i].text = t
-    #     fig.data[i].textposition = 'outside'
-    st.plotly_chart(fig, use_container_width=True, config= {'displayModeBar': False})
-
-def display_categorical_chart2(df, metric):
 
     # set x and y axis data
     x = df.index
