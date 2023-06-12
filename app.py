@@ -12,7 +12,7 @@ ticker = st.selectbox('Choose fund', utl.tickers.keys(),
 
 if ticker != 9999:
     ts = utl.get_ticker_timeseries(ticker)
-    ct = utl.get_ticker_categorical(ticker)
+    ct = utl.get_ticker_categorical(ticker, True)
     st.table(ct.head())
 
     st.subheader('Price/NAV')
