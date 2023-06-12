@@ -121,7 +121,7 @@ def prep_ticker_categorical_data(ticker, ttm=False):
     df['period'] = df[year_col].dt.year.astype(str) + '-' + df[year_col].dt.month.astype(str)
     df[year_col] = df[year_col].dt.year
             
-    if ttm or df.shape[0] % 3:
+    if ttm or df.shape[0] % 2:
         ttm = True
         df_aux = df.rolling(2).agg({
             shares_col: 'mean',
