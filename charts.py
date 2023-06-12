@@ -52,7 +52,7 @@ def display_categorical_chart2(df, metric):
     #plt.rcParams['axes.labelcolor'] = 'ffffff'
     plt.rcParams['xtick.color'] = '262730'
 
-    fig, ax = plt.subplots(2, 1, figsize=4.5)
+    fig, ax = plt.subplots(figsize=(6.4, 4.5))
     bars = ax.bar(np.arange(len(x)), y, tick_label=x, color='#0068c9', width=0.96)
 
     # show bar values on top
