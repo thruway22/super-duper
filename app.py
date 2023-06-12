@@ -74,7 +74,7 @@ if ticker != 9999:
             cht.display_categorical_chart(ct_hoh, 'ffo_coverage')
     with left:
         st.subheader('ffo_leverage')
-        st.latex(\frac{debt - cash}{ffo})
+        st.latex('''\frac{debt - cash}{ffo}''')
         yoy, hoh = st.tabs(['Full-Year', 'Half-Year'])
         with yoy:
             cht.display_categorical_chart(ct_yoy, 'ffo_leverage')
