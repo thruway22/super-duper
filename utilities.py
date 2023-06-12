@@ -115,7 +115,7 @@ def get_sector_timeseries():
 
     return df
 
-def prep_ticker_categorical_data(ticker, ttm):
+def prep_ticker_categorical_data(ticker, ttm=False):
     
     df = fdata[fdata[ticker_col] == ticker].drop(columns=[ticker_col, name_col])
     df['period'] = df[year_col].dt.year.astype(str) + '-' + df[year_col].dt.month.astype(str)
