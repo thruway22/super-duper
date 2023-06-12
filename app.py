@@ -54,3 +54,11 @@ if ticker != 9999:
     with left:
         st.subheader('ffo_leverage')
         cht.display_categorical_chart(ct, 'ffo_leverage')
+
+    right, left = st.columns(2)
+    with right:
+        st.subheader('ffo_coverage')
+        cht.display_categorical_chart2(ct, 'ffo_coverage')
+    with left:
+        st.subheader('ffo_leverage')
+        cht.display_categorical_chart2(ct, 'ffo_leverage')
