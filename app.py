@@ -14,7 +14,7 @@ if ticker != 9999:
     ts = utl.get_ticker_timeseries(ticker)
     ct_yoy = utl.get_ticker_categorical(ticker, 'full-year')
     ct_hoh = utl.get_ticker_categorical(ticker, 'half-year')
-    st.table(ts.head())
+    st.table(ct_yoy.head())
 
     st.subheader('Price/NAV')
     fig = px.line(ts, x=ts.index, y=['price', 'nav'])
