@@ -9,8 +9,8 @@ var_dict = {
     'ffo_payout': '.1%',
     'ffo_roic': '.1%',
     'ffo_margin': '.1%',
-    'ffo_leverage': '.2fx',
-    'ffo_coverage': '.2fx',
+    'ffo_leverage': '.2f',
+    'ffo_coverage': '.2f',
     }
 
 def display_timeseries_chart(df, metric):
