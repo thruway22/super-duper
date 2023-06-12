@@ -41,7 +41,7 @@ def display_categorical_chart2(df, metric):
 
     # set x and y axis data
     x = df.index
-    y = df[metric_col]
+    y = df[metric]
 
     # set defult font and colors
     plt.rcParams['font.size'] = 8
@@ -55,7 +55,7 @@ def display_categorical_chart2(df, metric):
 
     # show bar values on top
     ax.bar_label(bars, size=10,
-                 padding=6, fmt=var_dict['unit'][metric_col],
+                 padding=6, fmt=var_dict['unit'][metric],
                  bbox=dict(boxstyle="round, pad=0.3", fc="#0068c9", lw=0, alpha=0.10))
     
     ax.get_xaxis().set_visible(False)
