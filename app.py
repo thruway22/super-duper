@@ -63,3 +63,19 @@ if ticker != 9999:
             cht.display_categorical_chart(ct_yoy, 'ffo_roic')
         with hoh:
             cht.display_categorical_chart(ct_hoh, 'ffo_roic')
+
+    right, left = st.columns(2)
+    with right:
+        st.subheader('ffo_coverage')
+        yoy, hoh = st.tabs(['Full-Year', 'Half-Year'])
+        with yoy:
+            cht.display_categorical_chart(ct_yoy, 'ffo_coverage')
+        with hoh:
+            cht.display_categorical_chart(ct_hoh, 'ffo_coverage')
+    with left:
+        st.subheader('ffo_leverage')
+        yoy, hoh = st.tabs(['Full-Year', 'Half-Year'])
+        with yoy:
+            cht.display_categorical_chart(ct_yoy, 'ffo_leverage')
+        with hoh:
+            cht.display_categorical_chart(ct_hoh, 'ffo_leverage')
