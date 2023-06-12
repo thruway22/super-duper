@@ -47,3 +47,19 @@ if ticker != 9999:
             cht.display_categorical_chart(ct_yoy, 'ffo_payout')
         with hoh:
             cht.display_categorical_chart(ct_hoh, 'ffo_payout')
+
+    right, left = st.columns(2)
+    with right:
+        st.subheader('ffo_margin')
+        yoy, hoh = st.tabs(['Full-Year', 'Half-Year'])
+        with yoy:
+            cht.display_categorical_chart(ct_yoy, 'ffo_margin')
+        with hoh:
+            cht.display_categorical_chart(ct_hoh, 'ffo_margin')
+    with left:
+        st.subheader('ffo_roic')
+        yoy, hoh = st.tabs(['Full-Year', 'Half-Year'])
+        with yoy:
+            cht.display_categorical_chart(ct_yoy, 'ffo_roic')
+        with hoh:
+            cht.display_categorical_chart(ct_hoh, 'ffo_roic')
