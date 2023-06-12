@@ -115,37 +115,15 @@ def get_sector_timeseries():
 
     return df
 
-def prep_ticker_categorical_data(ticker, fiscal, ttm=False):
+def prep_ticker_categorical_data(ticker, ttm):
     
     df = fdata[fdata[ticker_col] == ticker].drop(columns=[ticker_col, name_col])
     df['period'] = df[year_col].dt.year.astype(str) + '-' + df[year_col].dt.month.astype(str)
     df[year_col] = df[year_col].dt.year
-    
-    if fiscal == 'half-year':
-        df = df.set_index('period').drop(columns =[year_col])
-        return df
-    
-    if fiscal == 'full-year':
-        
-        if ttm or df.shape[0] % 2:
-            ttm = True
-            df_aux = df.rolling(2).agg({
-                shares_col: 'mean',
-                ffo_col: 'sum',
-                dividend_col: 'sum',
-                revenue_col: 'sum',
-                interest_col: 'sum',
-                ebitda_col: 'sum',
-                ebit_col: 'sum',
-                nav_col: 'mean',
-                asset_col: 'mean',
-                equity_col: 'mean',
-                casti_col: 'mean',
-                debt_col: 'mean'})
-        
-        df = df[df.duplicated(year_col, keep=False) == True]
-
-        df = df.groupby(year_col).agg({
+            
+    if ttm or df.shape[0] % 2:
+        ttm = True
+        df_aux = df.rolling(2).agg({
             shares_col: 'mean',
             ffo_col: 'sum',
             dividend_col: 'sum',
@@ -153,16 +131,32 @@ def prep_ticker_categorical_data(ticker, fiscal, ttm=False):
             interest_col: 'sum',
             ebitda_col: 'sum',
             ebit_col: 'sum',
-            nav_col: 'last',
-            asset_col: 'last',
-            equity_col: 'last',
-            casti_col: 'last',
-            debt_col: 'last'})
-        
-        if ttm:
-            df = pd.concat([df, df_aux.tail(1).rename(index={0: 'TTM'})])
+            nav_col: 'mean',
+            asset_col: 'mean',
+            equity_col: 'mean',
+            casti_col: 'mean',
+            debt_col: 'mean'})
+    
+    df = df[df.duplicated(year_col, keep=False) == True]
 
-        return df
+    df = df.groupby(year_col).agg({
+        shares_col: 'mean',
+        ffo_col: 'sum',
+        dividend_col: 'sum',
+        revenue_col: 'sum',
+        interest_col: 'sum',
+        ebitda_col: 'sum',
+        ebit_col: 'sum',
+        nav_col: 'last',
+        asset_col: 'last',
+        equity_col: 'last',
+        casti_col: 'last',
+        debt_col: 'last'})
+    
+    if ttm:
+        df = pd.concat([df, df_aux.tail(1).rename(index={0: 'TTM'})])
+
+    return df
 
 def compute_ticker_categorical_metrics(df):
     
@@ -186,6 +180,6 @@ def compute_ticker_categorical_metrics(df):
     
     return df
 
-def get_ticker_categorical(ticker, fiscal, ttm=False):
+def get_ticker_categorical(ticker, ttm=False):
     return compute_ticker_categorical_metrics(
-        prep_ticker_categorical_data(ticker, fiscal, ttm))
+        prep_ticker_categorical_data(ticker, ttm))
