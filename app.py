@@ -35,47 +35,23 @@ if ticker != 9999:
     right, left = st.columns(2)
     with right:
         st.subheader('FFOS')
-        yoy, hoh = st.tabs(['Full-Year', 'Half-Year'])
-        with yoy:
-            cht.display_categorical_chart(ct_yoy, 'ffos')
-        with hoh:
-            cht.display_categorical_chart(ct_hoh, 'ffos')
+        cht.display_categorical_chart(ct_yoy, 'ffos')
     with left:
         st.subheader('FFO Payout')
-        yoy, hoh = st.tabs(['Full-Year', 'Half-Year'])
-        with yoy:
-            cht.display_categorical_chart(ct_yoy, 'ffo_payout')
-        with hoh:
-            cht.display_categorical_chart(ct_hoh, 'ffo_payout')
+        cht.display_categorical_chart(ct_yoy, 'ffo_payout')
 
     right, left = st.columns(2)
     with right:
         st.subheader('ffo_margin')
-        yoy, hoh = st.tabs(['Full-Year', 'Half-Year'])
-        with yoy:
-            cht.display_categorical_chart(ct_yoy, 'ffo_margin')
-        with hoh:
-            cht.display_categorical_chart(ct_hoh, 'ffo_margin')
+        cht.display_categorical_chart(ct_yoy, 'ffo_margin')
     with left:
         st.subheader('ffo_roic')
-        yoy, hoh = st.tabs(['Full-Year', 'Half-Year'])
-        with yoy:
-            cht.display_categorical_chart(ct_yoy, 'ffo_roic')
-        with hoh:
-            cht.display_categorical_chart(ct_hoh, 'ffo_roic')
+        cht.display_categorical_chart(ct_yoy, 'ffo_roic')
 
     right, left = st.columns(2)
     with right:
         st.subheader('ffo_coverage')
-        yoy, hoh = st.tabs(['Full-Year', 'Half-Year'])
-        with yoy:
-            cht.display_categorical_chart(ct_yoy, 'ffo_coverage')
-        with hoh:
-            cht.display_categorical_chart(ct_hoh, 'ffo_coverage')
+        cht.display_categorical_chart(ct_yoy, 'ffo_coverage')
     with left:
         st.subheader('ffo_leverage')
-        yoy, hoh = st.tabs(['Full-Year', 'Half-Year'])
-        with yoy:
-            cht.display_categorical_chart(ct_yoy, 'ffo_leverage')
-        with hoh:
-            cht.display_categorical_chart(ct_hoh, 'ffo_leverage')
+        cht.display_categorical_chart(ct_yoy, 'ffo_leverage')
