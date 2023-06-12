@@ -163,9 +163,9 @@ def compute_ticker_categorical_metrics(df):
     Profitability and Efficiency Metrics
     '''
     df['ffos'] = df[ffo_col] / df[shares_col]
-    df['ffo_payout'] = abs(df[dividend_col]) / df[ffo_col]
-    df['ffo_margin'] = df[ffo_col] / df[revenue_col]
-    df['ffo_roic'] = df[ffo_col] / (df[equity_col] + df[debt_col])
+    df['ffo_payout'] = 100 * abs(df[dividend_col]) / df[ffo_col]
+    df['ffo_margin'] = 100 * df[ffo_col] / df[revenue_col]
+    df['ffo_roic'] = 100 * df[ffo_col] / (df[equity_col] + df[debt_col])
     
     '''
     Leverage and Coverage Metrics
