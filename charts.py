@@ -69,5 +69,6 @@ def display_categorical_chart2(df, metric):
     
     plt.subplots_adjust(hspace=0)
     
+    
     #plt.show()
     return fig
