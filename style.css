@@ -10,11 +10,11 @@
     visibility: hidden;
   }
 
-  #metric_block{
+  #m_block{
     column-count: 3;
   }
   
-  #metric_value {
+  #m_value {
     column-span: 1;
     display: inline-block;
     position: relative;
@@ -30,7 +30,7 @@
     font-weight: bold;
   }
   
-  #metric_label{
+  #m_label{
     column-span: 1;
     direction: rtl;
     text-align:center;

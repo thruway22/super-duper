@@ -43,7 +43,7 @@ fmt_dict = {
 
 def display_metric(ticker_df, sector_df, metric):
      
-     metric_block = {
+     dic = {
         'navpd' : {
             'x': ticker_df['price'][-1],
             'y': ticker_df['nav'][-1],
@@ -51,15 +51,22 @@ def display_metric(ticker_df, sector_df, metric):
             'x_label': 'Current Price',
             'y_label': 'Current NAV',
             'unit': ' SAR', },
+        'yield' : {
+            'x': ticker_df.tail(1)['yield'][0],
+            'y': sector_df.tail(1)['yield'][0],
+            'z': (((ticker_df.tail(1)['yield'][0] / sector_df.tail(1)['yield'][0]) - 1) * 100),
+            'x_label': 'Current Yield',
+            'y_label': 'Sector Median Yield',
+            'unit': '%', },
     } 
      
-     output = f'''<div id="metric_block">
-                  <p id="metric_value">{metric_block[metric]['x']:.2f}{metric_block[metric]['unit']}</p>
-                  <p id="metric_label">{metric_block[metric]['x_label']}</p>
-                  <p id="metric_value">{metric_block[metric]['y']:.2f}{metric_block[metric]['unit']}</p>
-                  <p id="metric_label">{metric_block[metric]['y_label']}</p>
-                  <p id="metric_value">{metric_block[metric]['z']:.2f}{'%'}</p>
-                  <p id="metric_label">{'Premium/Discount'}</p>
+     output = f'''<div id="m_block">
+                  <p id="m_value">{dic[metric]['x']:.2f}{dic[metric]['unit']}</p>
+                  <p id="m_label">{dic[metric]['x_label']}</p>
+                  <p id="m_value">{dic[metric]['y']:.2f}{dic[metric]['unit']}</p>
+                  <p id="m_label">{dic[metric]['y_label']}</p>
+                  <p id="m_value">{dic[metric]['z']:.2f}{'%'}</p>
+                  <p id="m_label">{'Premium/Discount'}</p>
                   </div>'''
      return st.markdown(output, unsafe_allow_html=True)
 

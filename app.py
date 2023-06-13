@@ -20,7 +20,10 @@ if ticker != 9999:
 
     cht.display_metric(ticker_ts, sector_ts, 'navpd')
     cht.display_timeseries_chart(ticker_ts, sector_ts, 'navpd')
+
+    cht.display_metric(ticker_ts, sector_ts, 'yield')
     cht.display_timeseries_chart(ticker_ts, sector_ts, 'yield')
+
     cht.display_timeseries_chart(ticker_ts, sector_ts, 'pffo')
 
     right, left = st.columns(2)
