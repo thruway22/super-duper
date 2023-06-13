@@ -29,6 +29,7 @@ def display_timeseries_chart(df, metric):
     ax.set_frame_on(False)
     # ax.get_yaxis().set_visible(False)
     # ax.get_xaxis().set_visible(False)
+    plt.legend()
 
     return st.pyplot(fig)
 
