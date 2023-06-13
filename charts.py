@@ -33,7 +33,17 @@ fmt_dict = {
          'currency': ' SAR',
          'percent': '%',
          'multiple': 'x'
-     }   
+     } 
+
+metric_block = {
+    'navpd' : {
+        'x': ticker_df['price'][-1],
+        'y': ticker_df['nav'][-1],
+        'z': ticker_df['navpd'][-1],
+        'x_label': 'Current Price',
+        'y_label': 'Current NAV',
+        'unit': ' SAR', },
+}  
 
 # display_metric(ticker_data['navpd'][-1], 'percent', 'pd_label',
 #                 ticker_data['nav'][-1], 'currency', 'nav_label',
@@ -41,21 +51,13 @@ fmt_dict = {
 
 def display_metric(ticker_df, sector_df, metric):
      
-     if metric == 'navpd':
-         metric1 = ticker_df['price'][-1]
-         metric2 = ticker_df['nav'][-1]
-         metric3 = ticker_df['navpd'][-1]
-         metric1_label = 'Current Price'
-         metric2_label = 'Current NAV'
-         metric3_label = 'Premium/Discount'
-     
      output = f'''<div id="metric_block">
-                  <p id="metric_value">{metric1:.2f}{var_dict[metric]}</p>
-                  <p id="metric_label">{metric1_label}</p>
-                  <p id="metric_value">{metric2:.2f}{var_dict[metric]}</p>
-                  <p id="metric_label">{metric2_label}</p>
-                  <p id="metric_value">{metric3:.2f}{var_dict[metric]}</p>
-                  <p id="metric_label">{metric3_label}</p>
+                  <p id="metric_value">{metric_block[metric][x]:.2f}{metric_block[metric][unit]}</p>
+                  <p id="metric_label">{metric_block[metric][x_label]}</p>
+                  <p id="metric_value">{metric_block[metric][y]:.2f}{metric_block[metric][unit]}</p>
+                  <p id="metric_label">{metric_block[metric][y_label]}</p>
+                  <p id="metric_value">{metric_block[metric][z]:.2f}{'%'}</p>
+                  <p id="metric_label">{'Premium/Discount'}</p>
                   </div>'''
      return st.markdown(output, unsafe_allow_html=True)
 
