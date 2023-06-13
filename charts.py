@@ -44,20 +44,15 @@ def display_timeseries_chart(ticker_df, sector_df, metric):
         x_curve = xy.index
         y_curve = xy.values
 
-        # ax.plot(ticker_df[metric], color='#0068c9', linewidth=0)
+        ax.plot(ticker_df[metric], color='#0068c9', linewidth=0)
     
-        # ax.fill_between(x_curve, y_curve,
-        #                 where=(y_curve > 0), color=color_dict['more_than_zero'][metric], alpha=0.15)
-        # ax.fill_between(x_curve, y_curve,
-        #                 where=(y_curve < 0), color=color_dict['less_than_zero'][metric], alpha=0.15)
-
-        ax.plot(ticker_df[metric], linewidth=1, color='#0068c9', alpha=1, label='Ticker')
-        ax.plot(xy, linewidth=1, color='lightgrey', alpha=1, label='Sector')
-
         ax.fill_between(x_curve, y_curve,
-                        color=color_dict['more_than_zero'][metric], alpha=0.15)
-        # ax.fill_between(ticker_df[metric], sector_df[metric],
-        #                 where=(ticker_df[metric] < sector_df[metric]), color=color_dict['less_than_zero'][metric], alpha=0.15)
+                        where=(y_curve > 0), color=color_dict['more_than_zero'][metric], alpha=0.15)
+        ax.fill_between(x_curve, y_curve,
+                        where=(y_curve < 0), color=color_dict['less_than_zero'][metric], alpha=0.15)
+
+        # ax.plot(ticker_df[metric], linewidth=1, color='#0068c9', alpha=1, label='Ticker')
+        # ax.plot(sector_df[metric], linewidth=1, color='lightgrey', alpha=1, label='Sector')
 
     ax.set_frame_on(False)
     ax.get_yaxis().set_visible(False)
