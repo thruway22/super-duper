@@ -37,9 +37,8 @@ fmt_dict = {
 
  
 
-# display_metric(ticker_data['navpd'][-1], 'percent', 'pd_label',
-#                 ticker_data['nav'][-1], 'currency', 'nav_label',
-#                 ticker_data['price'][-1], 'currency', 'price_label')
+def display_divider():
+    return st.markdown('<hr/>', unsafe_allow_html=True)
 
 def display_metric(ticker_df, sector_df, metric):
      

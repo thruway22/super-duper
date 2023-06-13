@@ -20,6 +20,7 @@ if ticker != 9999:
     st.subheader('NAV Premium')
     cht.display_metric(ticker_ts, sector_ts, 'navpd')
     cht.display_timeseries_chart(ticker_ts, sector_ts, 'navpd')
+    cht.display_divider()
 
     st.subheader('Dividend Yield')
     cht.display_metric(ticker_ts, sector_ts, 'yield')
