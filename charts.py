@@ -28,13 +28,13 @@ def display_timeseries_chart(ticker_df, sector_df, metric):
 
     else:
         x2 = ((ticker_df[metric] / sector_df[metric]) - 1) * 100
-        ax.plot(ticker_df[metric], linewidth=1, color='lightgrey', alpha=1, label='Ticker')
-        ax.plot(x2, linewidth=1, color='#0068c9', alpha=1, label='Sector')
+        ax.plot(ticker_df[metric], linewidth=1, color='#0068c9', alpha=1, label='Ticker')
+        ax.plot(x2, linewidth=1, color='lightgrey', alpha=1, label='Sector')
 
     ax.set_frame_on(False)
     ax.get_yaxis().set_visible(False)
     # ax.get_xaxis().set_visible(False)
-    plt.legend()
+    # plt.legend()
 
     return st.pyplot(fig)
 
