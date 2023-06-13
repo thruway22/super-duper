@@ -38,7 +38,7 @@ def display_categorical_chart(df, metric):
     fig, ax = plt.subplots(figsize=(6.4, 4.5))
     bars = ax.bar(np.arange(len(x)), y, tick_label=x, color='#0068c9', width=0.96)
     ax.bar_label(bars, size=10,
-                 padding=-14, fmt=var_dict[metric],
+                 padding=6, fmt=var_dict[metric],
                  bbox=dict(boxstyle="round, pad=0.3", fc="#0068c9", lw=0, alpha=0.10))
     
     ax.get_yaxis().set_visible(False)    
