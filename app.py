@@ -1,6 +1,6 @@
 import streamlit as st
 import utilities as utl
-import charticker_ts as cht
+import charts as cht
 # import display as dsp
 
 with open('style.css') as f:
