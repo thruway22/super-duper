@@ -20,9 +20,12 @@ def display_timeseries_chart(df, metric):
     plt.rcParams['text.color'] = "85868B"
     plt.rcParams['xtick.color'] = '85868B'
 
-    fig, ax1 = plt.subplots(figsize=(6.4, 1.4))
+    fig, ax = plt.subplots(figsize=(6.4, 1.4))
 
-    pass
+    ax.plot(df['price'], linewidth=1, color='lightgrey', alpha=1)
+    ax.plot(df['nav'], linewidth=1, color='#0068c9', alpha=1)
+
+    return st.pyplot(fig)
 
 def display_categorical_chart(df, metric):
 
