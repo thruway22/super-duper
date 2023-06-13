@@ -15,12 +15,12 @@ var_dict = {
 
 color_dict = {
         'more_than_zero': {
-            'price': '#ff2b2b',
+            'navpd': '#ff2b2b',
             'pffo': '#ff2b2b',
             'yield': '#09ab3b'
         },
         'less_than_zero': {
-            'price': '#09ab3b',
+            'navpd': '#09ab3b',
             'pffo': '#09ab3b',
             'yield': '#ff2b2b'
         }
@@ -33,7 +33,7 @@ def display_timeseries_chart(ticker_df, sector_df, metric):
     plt.rcParams['text.color'] = "85868B"
     plt.rcParams['xtick.color'] = '85868B'
 
-    if metric == 'price':
+    if metric == 'navpd':
         xy = ticker_df['navpd']
     else:
         xy = ((ticker_df[metric] / sector_df[metric]) - 1) * 100
