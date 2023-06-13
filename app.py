@@ -25,31 +25,39 @@ if ticker != 9999:
     st.subheader('Dividend Yield')
     cht.display_metric(ticker_ts, sector_ts, 'yield')
     cht.display_timeseries_chart(ticker_ts, sector_ts, 'yield')
+    cht.display_divider()
 
     st.subheader('P/FFO')
     cht.display_metric(ticker_ts, sector_ts, 'pffo')
     cht.display_timeseries_chart(ticker_ts, sector_ts, 'pffo')
+    cht.display_divider()
 
     right, left = st.columns(2)
     with right:
         st.subheader('FFO/Sahre')
         cht.display_categorical_chart(ticker_ct, 'ffos')
+        cht.display_divider()
     with left:
         st.subheader('FFO Payout Ratio')
         cht.display_categorical_chart(ticker_ct, 'ffo_payout')
+        cht.display_divider()
 
     right, left = st.columns(2)
     with right:
         st.subheader('FFO Margin')
         cht.display_categorical_chart(ticker_ct, 'ffo_margin')
+        cht.display_divider()
     with left:
         st.subheader('FFO ROIC')
         cht.display_categorical_chart(ticker_ct, 'ffo_roic')
+        cht.display_divider()
 
     right, left = st.columns(2)
     with right:
         st.subheader('FFO Coverage')
         cht.display_categorical_chart(ticker_ct, 'ffo_coverage')
+        cht.display_divider()
     with left:
         st.subheader('FFO Leverage')
-        cht.display_categorical_chart(ticker_ct, 'ffo_leverage') 
+        cht.display_categorical_chart(ticker_ct, 'ffo_leverage')
+        cht.display_divider() 
