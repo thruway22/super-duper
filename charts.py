@@ -34,7 +34,7 @@ def display_timeseries_chart(ticker_df, sector_df, metric):
     ax.set_frame_on(False)
     ax.get_yaxis().set_visible(False)
     # ax.get_xaxis().set_visible(False)
-    # plt.legend()
+    plt.legend(loc='upper center')
 
     return st.pyplot(fig)
 
