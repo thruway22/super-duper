@@ -23,8 +23,8 @@ def display_timeseries_chart(df, metric):
     fig, ax = plt.subplots(figsize=(6.4, 1.4))
 
     if metric == 'price':
-        ax.plot(df['price'], linewidth=1, color='lightgrey', alpha=1, label="sine")
-        ax.plot(df['nav'], linewidth=1, color='#0068c9', alpha=1)
+        ax.plot(df['price'], linewidth=1, color='lightgrey', alpha=1, label="Price")
+        ax.plot(df['nav'], linewidth=1, color='#0068c9', alpha=1, label="NAV")
 
     ax.set_frame_on(False)
     # ax.get_yaxis().set_visible(False)
