@@ -10,8 +10,11 @@ st.title('Saudi REITs')
 ticker = st.selectbox('Choose fund', utl.tickers.keys(),
                       label_visibility='collapsed', format_func=lambda x:utl.tickers[x])
 
+sector_ts = utl.get_sector_timeseries()
+
 if ticker != 9999:
     ts = utl.get_ticker_timeseries(ticker)
+
     ct = utl.get_ticker_categorical(ticker)
     st.table(ts.head())
 

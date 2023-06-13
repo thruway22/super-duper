@@ -20,6 +20,8 @@ def display_timeseries_chart(df, metric):
     plt.rcParams['text.color'] = "85868B"
     plt.rcParams['xtick.color'] = '85868B'
 
+    fig, ax1 = plt.subplots(figsize=(6.4, 1.4))
+
     pass
 
 def display_categorical_chart(df, metric):
