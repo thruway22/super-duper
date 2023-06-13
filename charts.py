@@ -54,11 +54,11 @@ def display_metric(ticker_df, sector_df, metric):
     } 
      
      output = f'''<div id="metric_block">
-                  <p id="metric_value">{metric_block[metric][x]:.2f}{metric_block[metric][unit]}</p>
-                  <p id="metric_label">{metric_block[metric][x_label]}</p>
-                  <p id="metric_value">{metric_block[metric][y]:.2f}{metric_block[metric][unit]}</p>
-                  <p id="metric_label">{metric_block[metric][y_label]}</p>
-                  <p id="metric_value">{metric_block[metric][z]:.2f}{'%'}</p>
+                  <p id="metric_value">{metric_block[metric]['x']:.2f}{metric_block[metric]['unit']}</p>
+                  <p id="metric_label">{metric_block[metric]['x_label']}</p>
+                  <p id="metric_value">{metric_block[metric]['y']:.2f}{metric_block[metric]['unit']}</p>
+                  <p id="metric_label">{metric_block[metric]['y_label']}</p>
+                  <p id="metric_value">{metric_block[metric]['z']:.2f}{'%'}</p>
                   <p id="metric_label">{'Premium/Discount'}</p>
                   </div>'''
      return st.markdown(output, unsafe_allow_html=True)
