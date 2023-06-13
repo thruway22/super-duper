@@ -5,6 +5,9 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 
 var_dict = {
+    'navpd': ' SAR',
+    'yield': '%',
+    'pffo': 'x',
     'ffos': '%.2f',
     'ffo_payout': '%.1f%%',
     'ffo_roic': '%.1f%%',
@@ -25,6 +28,36 @@ color_dict = {
             'yield': '#ff2b2b'
         }
     }
+
+fmt_dict = {
+         'currency': ' SAR',
+         'percent': '%',
+         'multiple': 'x'
+     }   
+
+# display_metric(ticker_data['navpd'][-1], 'percent', 'pd_label',
+#                 ticker_data['nav'][-1], 'currency', 'nav_label',
+#                 ticker_data['price'][-1], 'currency', 'price_label')
+
+def display_metric(ticker_df, sector_df, metric):
+     
+     if metric == 'navpd':
+         metric1 = ticker_df['price'][-1]
+         metric2 = ticker_df['nav'][-1]
+         metric3 = ticker_df['navpd'][-1]
+         metric1_label = 'Current Price'
+         metric2_label = 'Current NAV'
+         metric3_label = 'Premium/Discount'
+     
+     output = f'''<div id="metric_block">
+                  <p id="metric_value">{metric1:.2f}{var_dict[metric]}</p>
+                  <p id="metric_label">{texts.loc[metric1_label].value}</p>
+                  <p id="metric_value">{metric2:.2f}{var_dict[metric]}</p>
+                  <p id="metric_label">{texts.loc[metric2_label].value}</p>
+                  <p id="metric_value">{metric3:.2f}{var_dict[metric]}</p>
+                  <p id="metric_label">{texts.loc[metric3_label].value}</p>
+                  </div>'''
+     return st.markdown(output, unsafe_allow_html=True)
 
 def display_timeseries_chart(ticker_df, sector_df, metric):
     # set defult font and colors

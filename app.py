@@ -18,6 +18,7 @@ if ticker != 9999:
     ticker_ct = utl.get_ticker_categorical(ticker)
     st.table(ticker_ts.head())
 
+    cht.display_metric(ticker_ts, sector_ts, 'navpd')
     cht.display_timeseries_chart(ticker_ts, sector_ts, 'navpd')
     cht.display_timeseries_chart(ticker_ts, sector_ts, 'yield')
     cht.display_timeseries_chart(ticker_ts, sector_ts, 'pffo')
