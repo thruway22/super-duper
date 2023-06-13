@@ -20,7 +20,7 @@ def display_timeseries_chart(df, metric):
     plt.rcParams['text.color'] = "85868B"
     plt.rcParams['xtick.color'] = '85868B'
 
-    fig, ax = plt.subplots(figsize=(6.4, 1.4))
+    fig, ax = plt.subplots(figsize=(7.2, 1.4))
 
     if metric == 'price':
         ax.plot(df['price'], linewidth=1, color='lightgrey', alpha=1, label="Price")
