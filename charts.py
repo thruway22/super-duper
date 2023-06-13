@@ -35,21 +35,23 @@ fmt_dict = {
          'multiple': 'x'
      } 
 
-metric_block = {
-    'navpd' : {
-        'x': ticker_df['price'][-1],
-        'y': ticker_df['nav'][-1],
-        'z': ticker_df['navpd'][-1],
-        'x_label': 'Current Price',
-        'y_label': 'Current NAV',
-        'unit': ' SAR', },
-}  
+ 
 
 # display_metric(ticker_data['navpd'][-1], 'percent', 'pd_label',
 #                 ticker_data['nav'][-1], 'currency', 'nav_label',
 #                 ticker_data['price'][-1], 'currency', 'price_label')
 
 def display_metric(ticker_df, sector_df, metric):
+     
+     metric_block = {
+        'navpd' : {
+            'x': ticker_df['price'][-1],
+            'y': ticker_df['nav'][-1],
+            'z': ticker_df['navpd'][-1],
+            'x_label': 'Current Price',
+            'y_label': 'Current NAV',
+            'unit': ' SAR', },
+    } 
      
      output = f'''<div id="metric_block">
                   <p id="metric_value">{metric_block[metric][x]:.2f}{metric_block[metric][unit]}</p>
