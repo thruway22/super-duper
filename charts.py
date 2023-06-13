@@ -58,6 +58,13 @@ def display_metric(ticker_df, sector_df, metric):
             'x_label': 'Current Yield',
             'y_label': 'Sector Median Yield',
             'unit': '%', },
+        'pffo' : {
+            'x': ticker_df.tail(1)['pffo'][0],
+            'y': sector_df.tail(1)['pffo'][0],
+            'z': (((ticker_df.tail(1)['pffo'][0] / sector_df.tail(1)['pffo'][0]) - 1) * 100),
+            'x_label': 'Current Multiple',
+            'y_label': 'Sector Median Multiple',
+            'unit': 'x', },
     } 
      
      output = f'''<div id="m_block">
