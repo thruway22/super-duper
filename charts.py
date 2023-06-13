@@ -52,7 +52,7 @@ def display_timeseries_chart(ticker_df, sector_df, metric):
         #                 where=(y_curve < 0), color=color_dict['less_than_zero'][metric], alpha=0.15)
 
         ax.plot(ticker_df[metric], linewidth=1, color='#0068c9', alpha=1, label='Ticker')
-        ax.plot(sector_df[metric], linewidth=1, color='#faca2b', alpha=1, label='Sector')
+        ax.plot(sector_df[metric], linewidth=1, color='#ff2b2b', alpha=1, label='Sector')
 
     ax.set_frame_on(False)
     ax.get_yaxis().set_visible(False)
