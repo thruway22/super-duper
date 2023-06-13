@@ -104,7 +104,7 @@ def get_sector_timeseries():
     df_yield = df.copy() 
     df_pffo = df.copy()
     
-    for i in tickers.keys():
+    for i in list(tickers)[2:]:
         df_aux = get_ticker_timeseries(i)
         df_yield[i] = df_aux['yield']
         df_pffo[i] = df_aux['pffo']
