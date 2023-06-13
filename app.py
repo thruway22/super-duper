@@ -16,14 +16,16 @@ if ticker != 9999:
     ticker_ts = utl.get_ticker_timeseries(ticker)
 
     ticker_ct = utl.get_ticker_categorical(ticker)
-    st.table(ticker_ts.head())
 
+    st.subheader('NAV Premium')
     cht.display_metric(ticker_ts, sector_ts, 'navpd')
     cht.display_timeseries_chart(ticker_ts, sector_ts, 'navpd')
 
+    st.subheader('Dividend Yield')
     cht.display_metric(ticker_ts, sector_ts, 'yield')
     cht.display_timeseries_chart(ticker_ts, sector_ts, 'yield')
 
+    st.subheader('P/FFO')
     cht.display_metric(ticker_ts, sector_ts, 'pffo')
     cht.display_timeseries_chart(ticker_ts, sector_ts, 'pffo')
 
