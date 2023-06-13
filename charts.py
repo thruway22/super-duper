@@ -13,6 +13,19 @@ var_dict = {
     'ffo_coverage': '%.2fx',
     }
 
+color_dict = {
+        'more_than_zero': {
+            'navpd': '#ff2b2b',
+            'pffo': '#ff2b2b',
+            'yield': '#09ab3b'
+        },
+        'less_than_zero': {
+            'navpd': '#09ab3b',
+            'pffo': '#09ab3b',
+            'yield': '#ff2b2b'
+        }
+    }
+
 def display_timeseries_chart(ticker_df, sector_df, metric):
     # set defult font and colors
     plt.rcParams['font.size'] = 6
@@ -27,9 +40,19 @@ def display_timeseries_chart(ticker_df, sector_df, metric):
         ax.plot(ticker_df['nav'], linewidth=1, color='#0068c9', alpha=1, label='NAV')
 
     else:
-        x2 = ((ticker_df[metric] / sector_df[metric]) - 1) * 100
-        ax.plot(ticker_df[metric], linewidth=1, color='#0068c9', alpha=1, label='Ticker')
-        ax.plot(sector_df[metric], linewidth=1, color='lightgrey', alpha=1, label='Sector')
+        xy = ((ticker_df[metric] / sector_df[metric]) - 1) * 100
+        x_curve = xy.index
+        y_curve = xy.values
+
+        ax.plot(ticker_df[metric_col], color='#0068c9', linewidth=0)
+    
+        ax.fill_between(x_curve, y_curve,
+                        where=(y_curve > 0), color=color_dict['more_than_zero'][metric_col], alpha=0.15)
+        ax.fill_between(x_curve, y_curve,
+                        where=(y_curve < 0), color=color_dict['less_than_zero'][metric_col], alpha=0.15)
+
+        # ax.plot(ticker_df[metric], linewidth=1, color='#0068c9', alpha=1, label='Ticker')
+        # ax.plot(sector_df[metric], linewidth=1, color='lightgrey', alpha=1, label='Sector')
 
     ax.set_frame_on(False)
     ax.get_yaxis().set_visible(False)
