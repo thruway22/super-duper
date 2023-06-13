@@ -15,12 +15,12 @@ var_dict = {
 
 color_dict = {
         'more_than_zero': {
-            'navpd': '#ff2b2b',
+            'price': '#ff2b2b',
             'pffo': '#ff2b2b',
             'yield': '#09ab3b'
         },
         'less_than_zero': {
-            'navpd': '#09ab3b',
+            'price': '#09ab3b',
             'pffo': '#09ab3b',
             'yield': '#ff2b2b'
         }
