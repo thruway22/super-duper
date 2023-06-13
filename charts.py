@@ -27,7 +27,7 @@ def display_timeseries_chart(df, metric):
         ax.plot(df['nav'], linewidth=1, color='#0068c9', alpha=1, label="NAV")
 
     ax.set_frame_on(False)
-    # ax.get_yaxis().set_visible(False)
+    ax.get_yaxis().set_visible(False)
     # ax.get_xaxis().set_visible(False)
     plt.legend()
 
