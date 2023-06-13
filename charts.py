@@ -55,9 +55,9 @@ def display_timeseries_chart(ticker_df, sector_df, metric):
         ax.plot(sector_df[metric], linewidth=1, color='#C5D8D1', alpha=0, label='Sector')
 
         ax.fill_between(ticker_df[metric], sector_df[metric],
-                        where=(ticker_df[metric] > 0), color=color_dict['more_than_zero'][metric], alpha=0.15)
+                        where=(ticker_df[metric] > sector_df[metric]), color=color_dict['more_than_zero'][metric], alpha=0.15)
         ax.fill_between(ticker_df[metric], sector_df[metric],
-                        where=(ticker_df[metric] < 0), color=color_dict['less_than_zero'][metric], alpha=0.15)
+                        where=(ticker_df[metric] < sector_df[metric]), color=color_dict['less_than_zero'][metric], alpha=0.15)
 
     ax.set_frame_on(False)
     ax.get_yaxis().set_visible(False)
