@@ -35,8 +35,6 @@ fmt_dict = {
          'multiple': 'x'
      } 
 
- 
-
 def display_divider():
     return st.markdown('<hr/>', unsafe_allow_html=True)
 
