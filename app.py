@@ -1,26 +1,25 @@
 import streamlit as st
 import utilities as utl
-import charts as cht
+import charticker_ts as cht
 # import display as dsp
 
 with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
-st.title('Saudi REITs')
+st.title('Saudi REIticker_ts')
 ticker = st.selectbox('Choose fund', utl.tickers.keys(),
                       label_visibility='collapsed', format_func=lambda x:utl.tickers[x])
 
 sector_ts = utl.get_sector_timeseries()
-st.table(sector_ts.tail())
 
 if ticker != 9999:
-    ts = utl.get_ticker_timeseries(ticker)
+    ticker_ts = utl.get_ticker_timeseries(ticker)
 
-    ct = utl.get_ticker_categorical(ticker)
-    st.table(ts.head())
+    ticker_ct = utl.get_ticker_categorical(ticker)
+    st.table(ticker_ts.head())
 
     # st.subheader('Price/NAV')
-    # fig = px.line(ts, x=ts.index, y=['price', 'nav'])
+    # fig = px.line(ticker_ts, x=ticker_ts.index, y=['price', 'nav'])
     # fig.update_layout(
     #     xaxis_title = 'Date',
     #     yaxis_title = 'Price (SAR)',
@@ -38,23 +37,23 @@ if ticker != 9999:
     right, left = st.columns(2)
     with right:
         st.subheader('FFO/Sahre')
-        cht.display_categorical_chart(ct, 'ffos')
+        cht.display_categorical_chart(ticker_ct, 'ffos')
     with left:
         st.subheader('FFO Payout Ratio')
-        cht.display_categorical_chart(ct, 'ffo_payout')
+        cht.display_categorical_chart(ticker_ct, 'ffo_payout')
 
     right, left = st.columns(2)
     with right:
         st.subheader('FFO Margin')
-        cht.display_categorical_chart(ct, 'ffo_margin')
+        cht.display_categorical_chart(ticker_ct, 'ffo_margin')
     with left:
         st.subheader('FFO ROIC')
-        cht.display_categorical_chart(ct, 'ffo_roic')
+        cht.display_categorical_chart(ticker_ct, 'ffo_roic')
 
     right, left = st.columns(2)
     with right:
         st.subheader('FFO Coverage')
-        cht.display_categorical_chart(ct, 'ffo_coverage')
+        cht.display_categorical_chart(ticker_ct, 'ffo_coverage')
     with left:
         st.subheader('FFO Leverage')
-        cht.display_categorical_chart(ct, 'ffo_leverage') 
+        cht.display_categorical_chart(ticker_ct, 'ffo_leverage') 
