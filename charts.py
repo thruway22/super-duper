@@ -13,7 +13,7 @@ var_dict = {
     'ffo_coverage': '%.2fx',
     }
 
-def display_timeseries_chart(df, metric):
+def display_timeseries_chart(ticker_df, sector_df, metric):
     # set defult font and colors
     plt.rcParams['font.size'] = 6
     plt.rcParams['font.family'] = "sans-serif"
@@ -23,8 +23,13 @@ def display_timeseries_chart(df, metric):
     fig, ax = plt.subplots(figsize=(6.4, 2.0))
 
     if metric == 'price':
-        ax.plot(df['price'], linewidth=1, color='lightgrey', alpha=1, label="Price")
-        ax.plot(df['nav'], linewidth=1, color='#0068c9', alpha=1, label="NAV")
+        ax.plot(ticker_df['price'], linewidth=1, color='lightgrey', alpha=1, label='Price')
+        ax.plot(ticker_df['nav'], linewidth=1, color='#0068c9', alpha=1, label='NAV')
+
+    else:
+        x2 = ((ticker_df[metric] / sector_df[metric]) - 1) * 100
+        ax.plot(df[metric], linewidth=1, color='#0068c9', alpha=1, label='Ticker')
+        ax.plot(x2, linewidth=1, color='lightgrey', alpha=1, label='Sector')
 
     ax.set_frame_on(False)
     ax.get_yaxis().set_visible(False)

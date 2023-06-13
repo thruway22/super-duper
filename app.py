@@ -19,6 +19,8 @@ if ticker != 9999:
     st.table(ticker_ts.head())
 
     cht.display_timeseries_chart(ticker_ts, 'price')
+    cht.display_timeseries_chart(ticker_ts, 'yield')
+    cht.display_timeseries_chart(ticker_ts, 'pffo')
 
     right, left = st.columns(2)
     with right:
