@@ -39,7 +39,7 @@ def display_divider():
     return st.markdown('<hr/>', unsafe_allow_html=True)
 
 def display_text(text):
-    return st.markdown('<p style="text-align: justify;">{text}</p>', unsafe_allow_html=True)
+    return st.markdown(f'<p style="text-align: justify;">{text}</p>', unsafe_allow_html=True)
 
 def display_metric(ticker_df, sector_df, metric):
      
