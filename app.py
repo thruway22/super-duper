@@ -18,10 +18,7 @@ if ticker != 9999:
     ticker_ct = utl.get_ticker_categorical(ticker)
 
     st.subheader('NAV Premium')
-    st.wrtie('''
-        The Net Asset Value (NAV) of a Real Estate Investment Trust (REIT) is the total value of the trust's properties and assets, minus any liabilities, divided by the number of shares outstanding. The NAV provides a per-share valuation of the REIT's real estate assets.
-        When a REIT's share price on the open market is higher than its NAV per share, it's said to be trading at a "premium." Conversely, if the REIT's share price is lower than its NAV per share, it's said to be trading at a "discount."
-    ''')
+    st.wrtie('''The Net Asset Value (NAV) of a Real Estate Investment Trust (REIT) is the total value of the trust's properties and assets, minus any liabilities, divided by the number of shares outstanding. The NAV provides a per-share valuation of the REIT's real estate assets. When a REIT's share price on the open market is higher than its NAV per share, it's said to be trading at a "premium." Conversely, if the REIT's share price is lower than its NAV per share, it's said to be trading at a "discount."''')
     cht.display_metric(ticker_ts, sector_ts, 'navpd')
     cht.display_timeseries_chart(ticker_ts, sector_ts, 'navpd')
     cht.display_divider()
