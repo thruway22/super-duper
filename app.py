@@ -57,9 +57,9 @@ if ticker != 9999:
         dsp.display_categorical_chart(ticker_ct, 'ffo_margin')
         st.subheader('FFO Margin')
         dsp.display_text('''
-            FFO Margin is a key efficiency indicator, showing how much of a REIT's revenue \
-            is turned into Funds From Operations (FFO). Higher values suggest better \
-            operational efficiency, with a larger share of revenue becoming FFO.
+            FFO Margin reveals the proportion of a REIT's revenue converted into Funds \
+            From Operations. A superior margin indicates increased efficiency and a \
+            greater conversion rate of revenue to FFO.
         ''')
         dsp.display_divider()
     with left:
