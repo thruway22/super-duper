@@ -44,21 +44,9 @@ if ticker != 9999:
 
     right, left = st.columns(2)
     with right:
-        st.subheader('FFO/Sahre')
-        dsp.display_text('''
-            FFO per Share denotes the portion of FFO attributed to each share. \
-            It's a tool to gauge REIT's profitability.
-        ''')
-        dsp.display_categorical_chart(ticker_ct, 'ffos')
-        dsp.display_divider()
+        dsp.display_categorical_section(ticker_ct, 'ffos')
     with left:
-        st.subheader('FFO Payout Ratio')
-        dsp.display_text('''
-            This reveals what percentage of FFO is paid out as dividends. \
-            Lower ratios may mean more growth potential.
-        ''')
-        dsp.display_categorical_chart(ticker_ct, 'ffo_payout')
-        dsp.display_divider()
+        dsp.display_categorical_section(ticker_ct, 'ffo_payout')
 
     right, left = st.columns(2)
     with right:

@@ -3,6 +3,9 @@ import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
+import utilities as utl
+import displays as dsp
+import texts as txt
 
 var_dict = {
     'navpd': ' SAR',
@@ -156,3 +159,9 @@ def display_categorical_chart(df, metric):
     plt.subplots_adjust(hspace=0)
     
     return st.pyplot(fig)
+
+def display_categorical_section(df, metric):
+    st.subheader(txt.headers[metric])
+    display_text(txt.bodies[metric])
+    display_categorical_chart(df, metric)
+    display_divider()
