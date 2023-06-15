@@ -49,30 +49,12 @@ if ticker != 9999:
 
     right, left = st.columns(2)
     with right:
-        st.subheader('FFO Margin')
-        utl.display_text('''
-            FFO Margin reveals the proportion of a REIT's revenue converted into Funds \
-            From Operations. A superior margin indicates increased efficiency and a \
-            lower costs relative to revenue.
-        ''')
-        utl.display_categorical_chart(ticker_ct, 'ffo_margin')
-        utl.display_divider()
+        utl.display_categorical_section(ticker_ct, 'ffo_margin')
     with left:
-        st.subheader('FFO ROIC')
-        utl.display_text('''
-            How much operating income the REIT is able to generate for each dollar of \
-            capital invested. A higher FFO ROIC percentage indicates the REIT is more \
-            efficient at turning its investment into profit.
-        ''')
-        utl.display_categorical_chart(ticker_ct, 'ffo_roic')
-        utl.display_divider()
+        utl.display_categorical_section(ticker_ct, 'ffo_roic')
 
     right, left = st.columns(2)
     with right:
-        st.subheader('FFO Coverage')
-        utl.display_categorical_chart(ticker_ct, 'ffo_coverage')
-        utl.display_divider()
+        utl.display_categorical_section(ticker_ct, 'ffo_coverage')
     with left:
-        st.subheader('FFO Leverage')
-        utl.display_categorical_chart(ticker_ct, 'ffo_leverage')
-        utl.display_divider() 
+        utl.display_categorical_section(ticker_ct, 'ffo_leverage')
