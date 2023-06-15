@@ -1,6 +1,5 @@
 import streamlit as st
 import utilities as utl
-import displays as dsp
 
 with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
@@ -18,62 +17,62 @@ if ticker != 9999:
     ticker_ct = utl.get_ticker_categorical(ticker)
 
     st.subheader('NAV Premium')
-    dsp.display_text('''
+    utl.display_text('''
         The Net Asset Value (NAV) of a Real Estate Investment Trust (REIT) is its total \
         assets minus liabilities, divided by shares outstanding. If a REIT's market share \
         price is higher than its NAV, it's trading at a "premium." If the share price is \
         lower, it's trading at a "discount." These can indicate investor sentiment about \
         the REIT's future performance or reflect market trends.
     ''')
-    dsp.display_metric(ticker_ts, sector_ts, 'navpd')
-    dsp.display_timeseries_chart(ticker_ts, sector_ts, 'navpd')
-    dsp.display_divider()
+    utl.display_metric(ticker_ts, sector_ts, 'navpd')
+    utl.display_timeseries_chart(ticker_ts, sector_ts, 'navpd')
+    utl.display_divider()
 
     st.subheader('Dividend Yield')
-    dsp.display_text('''
+    utl.display_text('''
         g
     ''')
-    dsp.display_metric(ticker_ts, sector_ts, 'yield')
-    dsp.display_timeseries_chart(ticker_ts, sector_ts, 'yield')
-    dsp.display_divider()
+    utl.display_metric(ticker_ts, sector_ts, 'yield')
+    utl.display_timeseries_chart(ticker_ts, sector_ts, 'yield')
+    utl.display_divider()
 
     st.subheader('P/FFO')
-    dsp.display_metric(ticker_ts, sector_ts, 'pffo')
-    dsp.display_timeseries_chart(ticker_ts, sector_ts, 'pffo')
-    dsp.display_divider()
+    utl.display_metric(ticker_ts, sector_ts, 'pffo')
+    utl.display_timeseries_chart(ticker_ts, sector_ts, 'pffo')
+    utl.display_divider()
 
     right, left = st.columns(2)
     with right:
-        dsp.display_categorical_section(ticker_ct, 'ffos')
+        utl.display_categorical_section(ticker_ct, 'ffos')
     with left:
-        dsp.display_categorical_section(ticker_ct, 'ffo_payout')
+        utl.display_categorical_section(ticker_ct, 'ffo_payout')
 
     right, left = st.columns(2)
     with right:
         st.subheader('FFO Margin')
-        dsp.display_text('''
+        utl.display_text('''
             FFO Margin reveals the proportion of a REIT's revenue converted into Funds \
             From Operations. A superior margin indicates increased efficiency and a \
             lower costs relative to revenue.
         ''')
-        dsp.display_categorical_chart(ticker_ct, 'ffo_margin')
-        dsp.display_divider()
+        utl.display_categorical_chart(ticker_ct, 'ffo_margin')
+        utl.display_divider()
     with left:
         st.subheader('FFO ROIC')
-        dsp.display_text('''
+        utl.display_text('''
             How much operating income the REIT is able to generate for each dollar of \
             capital invested. A higher FFO ROIC percentage indicates the REIT is more \
             efficient at turning its investment into profit.
         ''')
-        dsp.display_categorical_chart(ticker_ct, 'ffo_roic')
-        dsp.display_divider()
+        utl.display_categorical_chart(ticker_ct, 'ffo_roic')
+        utl.display_divider()
 
     right, left = st.columns(2)
     with right:
         st.subheader('FFO Coverage')
-        dsp.display_categorical_chart(ticker_ct, 'ffo_coverage')
-        dsp.display_divider()
+        utl.display_categorical_chart(ticker_ct, 'ffo_coverage')
+        utl.display_divider()
     with left:
         st.subheader('FFO Leverage')
-        dsp.display_categorical_chart(ticker_ct, 'ffo_leverage')
-        dsp.display_divider() 
+        utl.display_categorical_chart(ticker_ct, 'ffo_leverage')
+        utl.display_divider() 
