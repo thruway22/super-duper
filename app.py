@@ -18,21 +18,11 @@ if ticker != 9999:
     ticker_ct = utl.get_ticker_categorical(ticker)
 
     st.subheader('NAV Premium')
-    dsp.display_text('''
-        The Net Asset Value (NAV) of a Real Estate Investment Trust (REIT) is its total \
-        assets minus liabilities, divided by shares outstanding. If a REIT's market share \
-        price is higher than its NAV, it's trading at a "premium." If the share price is \
-        lower, it's trading at a "discount." These can indicate investor sentiment about \
-        the REIT's future performance or reflect market trends.
-    ''')
     dsp.display_metric(ticker_ts, sector_ts, 'navpd')
     dsp.display_timeseries_chart(ticker_ts, sector_ts, 'navpd')
     dsp.display_divider()
 
     st.subheader('Dividend Yield')
-    dsp.display_text('''
-        g
-    ''')
     dsp.display_metric(ticker_ts, sector_ts, 'yield')
     dsp.display_timeseries_chart(ticker_ts, sector_ts, 'yield')
     dsp.display_divider()
@@ -55,20 +45,10 @@ if ticker != 9999:
     right, left = st.columns(2)
     with right:
         st.subheader('FFO Margin')
-        dsp.display_text('''
-            It indicates the percentage of revenue that a REIT has converted into FFO. \
-            A higher FFO Margin suggests that the REIT is more efficient in its operations \
-            and able to convert a larger portion of its revenue into FFO.
-        ''')
         dsp.display_categorical_chart(ticker_ct, 'ffo_margin')
         dsp.display_divider()
     with left:
         st.subheader('FFO ROIC')
-        dsp.display_text('''
-            How much operating income the REIT is able to generate for each dollar of \
-            capital invested. A higher FFO ROIC percentage indicates the REIT is more \
-            efficient at turning its investment into profit.
-        ''')
         dsp.display_categorical_chart(ticker_ct, 'ffo_roic')
         dsp.display_divider()
 
