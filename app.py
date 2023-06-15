@@ -57,9 +57,10 @@ if ticker != 9999:
         dsp.display_categorical_chart(ticker_ct, 'ffo_margin')
         st.subheader('FFO Margin')
         dsp.display_text('''
-            It indicates the percentage of revenue that a REIT has converted into FFO. \
-            A higher FFO Margin suggests that the REIT is more efficient in its operations \
-            and able to convert a larger portion of its revenue into FFO.
+            FFO Margin indicates how effectively a REIT transforms its revenue into \
+            Funds From Operations (FFO). A higher margin signifies that the REIT \
+            demonstrates superior operational efficiency, successfully converting \
+            a larger segment of its total revenue into FFO.
         ''')
         dsp.display_divider()
     with left:
