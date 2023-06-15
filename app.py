@@ -59,6 +59,11 @@ if ticker != 9999:
         dsp.display_divider()
     with left:
         st.subheader('FFO ROIC')
+        dsp.display_text('''
+            How much operating income the REIT is able to generate for each dollar of \
+            capital invested. A higher FFO ROIC percentage indicates the REIT is more \
+            efficient at turning its investment into profit.
+        ''')
         dsp.display_categorical_chart(ticker_ct, 'ffo_roic')
         dsp.display_divider()
 
