@@ -2,7 +2,7 @@
 
 
 headers = {
-    'ffo' : "FFO/Share",
+    'ffos' : "FFO/Share",
     'ffo_payout': "FFO Payout Raito"
 }
 
