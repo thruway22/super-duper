@@ -13,6 +13,7 @@ ticker = st.selectbox('Choose fund', utl.tickers.keys(),
 sector_ts = utl.get_sector_timeseries()
 
 if ticker != 9999:
+    st.header(utl.tickers[ticker])
     ticker_ts = utl.get_ticker_timeseries(ticker)
 
     ticker_ct = utl.get_ticker_categorical(ticker)
