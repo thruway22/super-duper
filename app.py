@@ -38,3 +38,7 @@ if ticker != 9999:
         utl.display_categorical_section(ticker_ct, 'ffo_coverage')
     with left:
         utl.display_categorical_section(ticker_ct, 'ffo_leverage')
+
+
+    st.multiselect('compare', list(utl.tickers)[2:], default=None,
+                   format_func=lambda x:utl.tickers[x], max_selections=3)
