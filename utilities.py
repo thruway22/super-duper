@@ -319,8 +319,15 @@ def display_categorical_chart(df, metric):
     
     return st.pyplot(fig)
 
-def display_categorical_section(df, metric):
+def display_categorical_section(ticker_df, metric):
     st.subheader(txt.headers[metric])
     display_text(txt.bodies[metric])
-    display_categorical_chart(df, metric)
+    display_categorical_chart(ticker_df, metric)
+    display_divider()
+
+def display_timeseries_section(ticker_df, sector_df, metric):
+    st.subheader(txt.headers[metric])
+    display_text(txt.bodies[metric])
+    display_metric(ticker_df, sector_df, metric)
+    display_timeseries_chart(ticker_df, sector_df, metric)
     display_divider()
