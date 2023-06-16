@@ -1,5 +1,6 @@
 import streamlit as st
 import utilities as utl
+import matplotlib.pyplot as plt
 
 with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
@@ -40,5 +41,8 @@ if ticker != 9999:
         utl.display_categorical_section(ticker_ct, 'ffo_leverage')
 
 
-    st.multiselect('compare', list(utl.tickers)[1:], default=None,
+    com = st.multiselect('compare', list(utl.tickers)[1:], default=None,
                    format_func=lambda x:utl.tickers[x], max_selections=3)
+    
+    for i in com:
+        st.write(i)
