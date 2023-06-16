@@ -331,3 +331,4 @@ def display_timeseries_section(ticker_df, sector_df, metric):
     display_metric(ticker_df, sector_df, metric)
     display_timeseries_chart(ticker_df, sector_df, metric)
     display_divider()
+    
