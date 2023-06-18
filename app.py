@@ -22,11 +22,8 @@ if ticker != 9999:
     utl.display_timeseries_section(ticker_ts, sector_ts, 'yield')
     utl.display_timeseries_section(ticker_ts, sector_ts, 'pffo')
 
-    right, left = st.columns(2)
-    with right:
-        utl.display_categorical_section(ticker_ct, 'ffos')
-    with left:
-        utl.display_categorical_section(ticker_ct, 'ffo_payout')
+    utl.display_categorical_section(ticker_ct, 'ffos')
+    utl.display_categorical_section(ticker_ct, 'ffo_payout')
 
     right, left = st.columns(2)
     with right:
@@ -40,10 +37,4 @@ if ticker != 9999:
     with left:
         utl.display_categorical_section(ticker_ct, 'ffo_leverage')
 
-
-    # com = st.multiselect('compare', list(utl.tickers)[1:], default=None,
-    #                format_func=lambda x:utl.tickers[x], max_selections=3)
-    # metric_i = st.selectbox(label, ['ffos', 'ffo_payout', 'ffo_margin'])
-    # com_df = pd.DataFrame()
-    # for i in com:
-    #     com_df = get_ticker_categorical(ticker, ttm=False)[metric_i]
+        
