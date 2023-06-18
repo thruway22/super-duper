@@ -8,7 +8,7 @@ headers = {
     'ffos' : "FFO/Share",
     'ffo_payout': "FFO Payout Raito",
     'ffo_margin': "FFO Margin",
-    'ffo_roic': "FFO ROIC",
+    'ffo_roic': "FFO Return on Invested Capital",
     'ffo_coverage': "FFO Coverage",
     'ffo_leverage': "FFO Leverage",
 }
