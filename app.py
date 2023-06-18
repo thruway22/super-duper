@@ -22,8 +22,11 @@ if ticker != 9999:
     utl.display_timeseries_section(ticker_ts, sector_ts, 'yield')
     utl.display_timeseries_section(ticker_ts, sector_ts, 'pffo')
 
-    utl.display_categorical_section(ticker_ct, 'ffos')
-    utl.display_categorical_section(ticker_ct, 'ffo_payout')
+    right, left = st.columns(2)
+    with right:
+        utl.display_categorical_section(ticker_ct, 'ffos')
+    with left:
+        utl.display_categorical_section(ticker_ct, 'ffo_payout')
 
     right, left = st.columns(2)
     with right:
@@ -36,5 +39,3 @@ if ticker != 9999:
         utl.display_categorical_section(ticker_ct, 'ffo_coverage')
     with left:
         utl.display_categorical_section(ticker_ct, 'ffo_leverage')
-
-        
